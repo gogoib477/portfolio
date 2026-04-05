@@ -20,6 +20,16 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [displayedRole, setDisplayedRole] = useState("");
 
+  const handleProjectsScroll = (event) => {
+    event.preventDefault();
+    const section = document.getElementById("projects");
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", "#projects");
+    }
+  };
+
   useEffect(() => {
     let previousScrollY = window.scrollY;
 
@@ -50,7 +60,7 @@ export default function App() {
 
   useEffect(() => {
     const roles = [
-      "Full Stack Web Developer",
+      "Web Developer",
       "Freelancer",
       "CS Undergrad",
       "AI Enthusiast"
@@ -132,7 +142,7 @@ export default function App() {
         <section className="hero-shell">
           <div className="hero">
             <div className="hero-intro-mobile-wrap">
-              <img className="hero-inline-mobile-pic" src={sleepingPhoto} alt="Binod Gogoi" />
+              <img className="hero-inline-pic" src={sleepingPhoto} alt="Binod Gogoi" />
               <div className="hero-heading-stack">
                 <p className="hero-name">
                   <span className="hero-greeting">Hey, I&apos;m</span>
@@ -140,7 +150,7 @@ export default function App() {
                   <span className="hero-suffix">a</span>
                 </p>
                 <h1 className="hero-role">
-                  <span className="typewriter-role">{displayedRole}</span>
+                  <span className="typewriter-role">{displayedRole || "\u00A0"}</span>
                 </h1>
               </div>
             </div>
@@ -148,7 +158,7 @@ export default function App() {
             <p className="about-text">{portfolio.about}</p>
 
             <div className="hero-actions">
-              <a href="#projects" className="primary-link">
+              <a href="#projects" className="primary-link" onClick={handleProjectsScroll}>
                 View My Work <ArrowUpRight size={18} />
               </a>
               <a href={`mailto:${portfolio.links.email}`} className="secondary-link">
@@ -157,11 +167,12 @@ export default function App() {
             </div>
           </div>
 
-          <div className="hero-photo-panel" aria-label="Profile photo placeholder">
+          <div className="hero-photo-panel" aria-label="Profile photo">
             <div className="hero-photo-ring">
               <img className="hero-photo-slot" src={sleepingPhoto} alt="Binod Gogoi" />
             </div>
           </div>
+
         </section>
 
         <section id="tech-stack" className="info-section tech-stack-section">
