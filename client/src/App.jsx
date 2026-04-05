@@ -10,32 +10,15 @@ import {
   Sun,
   Twitter
 } from "lucide-react";
-import { fetchPortfolioData } from "./api";
+import { portfolioData } from "./data/portfolioData";
 import SpaceBackground from "./components/SpaceBackground";
 import sleepingPhoto from "./assets/sleeping.jpg";
 
 export default function App() {
-  const [portfolio, setPortfolio] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [portfolio] = useState(portfolioData);
   const [showBottomDock, setShowBottomDock] = useState(true);
   const [darkMode, setDarkMode] = useState(true);
   const [displayedRole, setDisplayedRole] = useState("");
-
-  useEffect(() => {
-    async function loadData() {
-      try {
-        const data = await fetchPortfolioData();
-        setPortfolio(data);
-      } catch (err) {
-        setError(err.message || "Could not load portfolio data");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadData();
-  }, []);
 
   useEffect(() => {
     let previousScrollY = window.scrollY;
@@ -140,14 +123,6 @@ export default function App() {
       }
     ];
   }, [portfolio]);
-
-  if (loading) {
-    return <div className="status-screen">Loading portfolio...</div>;
-  }
-
-  if (error) {
-    return <div className="status-screen">{error}</div>;
-  }
 
   return (
     <div className="app-shell">
