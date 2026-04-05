@@ -838,13 +838,31 @@ body {
 
   .bottom-dock {
     max-width: calc(100vw - 1rem);
-    padding: 0.28rem 0.32rem;
+    gap: 0.28rem;
+    padding: 0.36rem 0.45rem;
   }
 
   .bottom-dock a,
   .dock-mode-button {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .separator-pipe {
+    margin: 0 0.14rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .bottom-dock {
+    gap: 0.24rem;
+    padding: 0.34rem 0.4rem;
+  }
+
+  .bottom-dock a,
+  .dock-mode-button {
+    width: 40px;
+    height: 40px;
   }
 }
 
