@@ -57,12 +57,12 @@ export const portfolioData = {
     {
       title: "Full Stack Web Developer",
       company: "FoodSource Company",
-      period: "January 2026 - Present",
+      period: "December 2025 - May 2026",
       points: [
-        "Currently building a comprehensive website and CRM web application for a food sourcing company to streamline operations.",
-        "Developing automated client outreach workflows and communication systems to improve customer engagement.",
-        "Architecting scalable backend infrastructure with real-time notifications and scheduling capabilities.",
-        "Creating an intuitive admin dashboard for managing client data, orders, and campaign analytics."
+        "Built a comprehensive website and CRM web application for a food sourcing company to streamline operations.",
+        "Developed automated client outreach workflows and communication systems to improve customer engagement.",
+        "Architected scalable backend infrastructure with real-time notifications and scheduling capabilities.",
+        "Created an intuitive admin dashboard for managing client data, orders, and campaign analytics."
       ]
     },
     {
@@ -78,6 +78,30 @@ export const portfolioData = {
     },
   ],
   projects: [
+    {
+      name: "Habit Tracker App",
+      description:
+        "A full-stack habit tracker with progress tracking, gamification, and insights across web, mobile, and backend services.",
+      tech: ["React", "React Native (Expo)", "Node.js", "MongoDB"],
+      github: "https://github.com/gogoib477/habit-tracker-app",
+      live: "https://habit-tracker-app-frontend-delta.vercel.app/"
+    },
+    {
+      name: "CRM App",
+      description:
+        "A CRM platform built during internship to manage clients, outreach, and workflow operations.",
+      tech: ["React", "Node.js", "Express", "MongoDB"],
+      github: "https://github.com/gogoib477/CRMapp",
+      live: "https://foodsure-nexus.vercel.app/"
+    },
+    {
+      name: "AI Website Audit Tool",
+      description:
+        "A lightweight SaaS-style app that audits any website and returns instant SEO, UX, and conversion improvement insights.",
+      tech: ["React", "Node.js", "AI API", "Vercel"],
+      github: "https://github.com/gogoib477/ai-audit-tool",
+      live: "https://ai-audit-tool-virid.vercel.app/"
+    },
     {
       name: "E-Commerce Platform",
       description:
